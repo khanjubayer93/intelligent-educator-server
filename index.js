@@ -26,11 +26,14 @@ async function run() {
             res.send(subjects)
         });
 
+        // get data with id 
+
         app.get('/subjects/:id',async(req,res)=>{
             const id = req.params.id;
             const query = {_id: ObjectId(id)};
             const subjects = await subjectCollection.findOne(query);
             res.send(subjects)
+            console.log(subjects)
 
         })
 
